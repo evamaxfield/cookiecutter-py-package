@@ -1,0 +1,45 @@
+name: Test Repo Construction
+
+on:
+  pull_request:
+    branches:
+      - main
+
+# Cancel actions when new commits are pushed to PR
+concurrency: 
+    group: ${{ github.head_ref }}
+    cancel-in-progress: true
+
+jobs:
+  test-repo:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2.3.1
+      with:
+        persist-credentials: false
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.10'
+    - uses: extractions/setup-just@v1
+    - name: Install Dependencies
+      run: |
+        pip install --upgrade pip
+        pip install cookiecutter
+    - name: Generate Repo
+      run: |
+        cookiecutter . --no-input
+    - name: Install Generated Repo Dependencies
+      run: |
+        cd python_boilerplate
+        pip install -e .[ci]
+    - name: Run Generated Repo Build
+      run: |
+        just build
+    - name: Run Generated Repo Lint
+      run: |
+        just lint
+    - name: Test Generate Docs
+      run: |
+        just generate-docs

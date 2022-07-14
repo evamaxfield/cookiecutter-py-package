@@ -1,0 +1,53 @@
+name: Generate and Test Example Repo
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # <minute [0,59]> <hour [0,23]> <day of the month [1,31]> <month of the year [1,12]> <day of the week [0,6]>
+    # https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07
+    # Run every Monday at 18:00:00 UTC (Monday at 10:00:00 PST)
+    - cron: '0 18 * * 1'
+
+jobs:
+  test-repo:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2.3.1
+      with:
+        persist-credentials: false
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.10'
+    - uses: extractions/setup-just@v1
+    - name: Install Dependencies
+      run: |
+        pip install --upgrade pip
+        pip install cookiecutter
+    - name: Generate Repo
+      run: |
+        cookiecutter . --no-input
+    - name: Install Generated Repo Dependencies
+      run: |
+        cd python_boilerplate
+        pip install -e .[ci]
+    - name: Run Generated Repo Build
+      run: |
+        just build
+    - name: Run Generated Repo Lint
+      run: |
+        just lint
+    - name: Test Generate Docs
+      run: |
+        just generate-docs
+    - name: Publish Repo
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BASE_BRANCH: ${{ github.head_ref }} # The branch the action should deploy from.
+        BRANCH: 'example-build' # The branch the action should deploy to.
+        FOLDER: python_boilerplate/ # The folder the action should deploy
+        CLEAN: true
