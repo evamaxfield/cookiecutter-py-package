@@ -45,4 +45,4 @@ To use this template use the following commands and then follow the prompts from
 terminal.
 
 1. `pip install cookiecutter`
-2. `cookiecutter gh:AllenCellModeling/cookiecutter-pypackage`
+2. `cookiecutter gh:evamaxfield/cookiecutter-py-package`

@@ -1,4 +1,4 @@
-files: aicsimageio
+files: {{ cookiecutter.python_slug }}
 repos:
     - repo: https://github.com/PyCQA/flake8
       rev: 3.9.2
