@@ -36,10 +36,13 @@ jobs:
         pip install -e .[ci]
     - name: Run Generated Repo Build
       run: |
+        cd python-boilerplate
         just build
     - name: Run Generated Repo Lint
       run: |
+        cd python-boilerplate
         just lint
     - name: Test Generate Docs
       run: |
+        cd python-boilerplate
         just generate-docs
