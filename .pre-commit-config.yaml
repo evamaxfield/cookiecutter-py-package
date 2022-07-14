@@ -1,4 +1,4 @@
-files: aicsimageio
+files: python_boilerplate
 repos:
     - repo: https://github.com/PyCQA/flake8
       rev: 3.9.2

@@ -29,7 +29,7 @@ class Args(argparse.Namespace):
             "--debug",
             dest="debug",
             action="store_true",
-            help="Run with debug logging."
+            help="Run with debug logging.",
         )
         p.parse_args(namespace=self)
 
@@ -63,6 +63,7 @@ def main() -> None:
         log.error("\n\n" + str(e) + "\n")
         log.error("=============================================")
         sys.exit(1)
+
 
 ###############################################################################
 # Allow caller to directly run this module (usually in development scenarios)

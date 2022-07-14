@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+
 def str_len(string: str) -> int:
     """
     Return the count of characters in the provided string.
@@ -9,7 +10,7 @@ def str_len(string: str) -> int:
     ----------
     string: str
         The string to get the count of characters for.
-    
+
     Returns
     -------
     int
