@@ -59,6 +59,7 @@ extra_requirements = {
     "setup": setup_requirements,
     "ci": ci_requirements,
     "test": test_requirements,
+    "docs": docs_requirements,
     "dev": dev_requirements,
     "all": [
         *requirements,
