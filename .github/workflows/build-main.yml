@@ -45,6 +45,7 @@ jobs:
     - name: Test Generate Docs
       run: |
         cd python-boilerplate
+        pip install -e .[docs]
         just generate-docs
     - name: Publish Repo
       uses: JamesIves/github-pages-deploy-action@3.7.1
