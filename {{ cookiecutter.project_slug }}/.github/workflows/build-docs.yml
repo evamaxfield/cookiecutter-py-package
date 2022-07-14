@@ -23,7 +23,6 @@ jobs:
       - name: Generate Docs
         run: |
           just generate-docs
-          touch docs/_build/html/.nojekyll
       - name: Publish Docs
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:

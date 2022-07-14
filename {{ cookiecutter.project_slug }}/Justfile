@@ -35,6 +35,7 @@ generate-docs:
 	rm -f docs/modules.rst
 	sphinx-apidoc -o docs/ {{ cookiecutter.python_slug }} **/tests/
 	python -msphinx "docs/" "docs/_build/"
+	touch docs/_build/.nojekyll
 
 # generate Sphinx HTML documentation and serve to browser
 serve-docs:
