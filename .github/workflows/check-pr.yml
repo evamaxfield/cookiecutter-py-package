@@ -32,7 +32,7 @@ jobs:
         cookiecutter . --no-input
     - name: Install Generated Repo Dependencies
       run: |
-        cd python_boilerplate
+        cd python-boilerplate
         pip install -e .[ci]
     - name: Run Generated Repo Build
       run: |
