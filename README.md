@@ -34,6 +34,21 @@ We think that this template provides a good starting point for any Python projec
     to GitHub Pages
 -   Includes example code samples for objects, tests, and bin scripts
 
+List of available `just` commands:
+```bash
+just
+```
+```
+Available recipes:
+    build                    # run tox / run tests and lint
+    clean                    # clean all build, python, and lint files
+    default                  # list all available commands
+    generate-docs            # generate Sphinx HTML documentation
+    lint                     # lint, format, and check all files
+    serve-docs               # generate Sphinx HTML documentation and serve to browser
+    update-from-cookiecutter # update this repo using latest cookiecutter-py-package
+```
+
 ## Example
 
 -   For an example of the base project that is built from this template, go to the
