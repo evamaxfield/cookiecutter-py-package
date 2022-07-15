@@ -22,19 +22,29 @@ contains following:
 
 We think that this template provides a good starting point for any Python project.
 
+## Quickstart
+
+To use this template use the following commands.
+
+1. `pip install cookiecutter`
+2. `cookiecutter gh:evamaxfield/cookiecutter-py-package`
+
+Once the project is generated, move to the newly created project directory
+and follow the instructions in `SETUP.md`.
+
 ## Features
 
 -   Uses `tox` (an environment manager) and `pytest` for local testing, simply run `tox`
-    or `just build` from a terminal in the project home directory
+    or `just build` from a terminal in the project home directory.
 -   Runs tests on Windows, Mac, and Ubuntu on every branch and pull request commit using
-    GitHub Actions
+    GitHub Actions.
 -   Releases your Python Package to PyPI when you push to `main` after using
-    `bump2version`
+    `bump2version`.
 -   Automatically builds documentation using Sphinx on every push to main and deploys
-    to GitHub Pages
--   Includes example code samples for objects, tests, and bin scripts
+    to GitHub Pages.
+-   Includes very minimal example code to get started.
 
-List of available `just` commands:
+List of available [just](https://github.com/casey/just) commands:
 ```bash
 just
 ```
@@ -53,11 +63,3 @@ Available recipes:
 
 -   For an example of the base project that is built from this template, go to the
     [example-build branch](https://github.com/evamaxfield/cookiecutter-py-package/tree/example-build).
-
-## Quickstart
-
-To use this template use the following commands and then follow the prompts from the
-terminal.
-
-1. `pip install cookiecutter`
-2. `cookiecutter gh:evamaxfield/cookiecutter-py-package`
