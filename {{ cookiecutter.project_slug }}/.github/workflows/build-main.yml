@@ -82,6 +82,6 @@ jobs:
     - name: Publish to PyPI
       uses: pypa/gh-action-pypi-publish@master
       with:
-        user: {% endraw %}{{ cookiecutter.pypi_username }}{% raw %}
+        user: {% endraw %}{{ cookiecutter.hosting_pypi_username }}{% raw %}
         password: ${{ secrets.PYPI_TOKEN }}
 {% endraw %}
