@@ -1,7 +1,7 @@
 {% if cookiecutter.license == 'MIT License' -%}
 MIT License
 
-Copyright (c) {% now 'local', '%Y' %}, {{ cookiecutter.name }}
+Copyright (c) {% now 'local', '%Y' %}, {{ cookiecutter.author_name }}
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,7 @@ SOFTWARE.
 {% elif cookiecutter.license == 'BSD License' -%}
 BSD License
 
-Copyright (c) {% now 'local', '%Y' %}, {{ cookiecutter.name }}
+Copyright (c) {% now 'local', '%Y' %}, {{ cookiecutter.author_name }}
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,
@@ -55,7 +55,7 @@ GNU GENERAL PUBLIC LICENSE
                       Version 3, 29 June 2007
 
     {{ cookiecutter.project_short_description }}
-    Copyright (C) {% now 'local', '%Y' %}  {{ cookiecutter.name }}
+    Copyright (C) {% now 'local', '%Y' %}  {{ cookiecutter.author_name }}
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -86,7 +86,7 @@ Public License instead of this License.  But first, please read
 {% elif cookiecutter.license == 'Anti-Capitalist Software License' -%}
 ANTI-CAPITALIST SOFTWARE LICENSE (v 1.4)
 
-Copyright (c) {% now 'local', '%Y' %}, {{ cookiecutter.name }}
+Copyright (c) {% now 'local', '%Y' %}, {{ cookiecutter.author_name }}
 
 This is anti-capitalist software, released for free use by individuals and organizations that do not operate by capitalist principles.
 
@@ -120,7 +120,7 @@ We build software to further this vision of a just world, or at the very least, 
 
 **Terms**
 
-Copyright (c) {% now 'local', '%Y' %}, {{ cookiecutter.name }}. All rights reserved.
+Copyright (c) {% now 'local', '%Y' %}, {{ cookiecutter.author_name }}. All rights reserved.
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.

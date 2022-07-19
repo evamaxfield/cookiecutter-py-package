@@ -1,7 +1,7 @@
 default_context:
-    name: "{{ cookiecutter.name }}"
-    email: "{{ cookiecutter.email }}"
-    github_username: "{{ cookiecutter.github_username }}"
+    name: "{{ cookiecutter.author_name }}"
+    email: "{{ cookiecutter.author_email }}"
+    github_username: "{{ cookiecutter.hosting_github_username_or_org }}"
     project_name: "{{ cookiecutter.project_name }}"
     project_slug: "{{ cookiecutter.project_slug }}"
     python_slug: "{{ cookiecutter.python_slug }}"

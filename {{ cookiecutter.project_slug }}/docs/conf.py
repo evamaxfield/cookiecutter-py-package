@@ -89,7 +89,7 @@ main_doc = "index"
 # General information about the project.
 project = "{{ cookiecutter.project_slug }}"
 copyright = "{% now 'local', '%Y' %}"
-author = "{{ cookiecutter.name }}"
+author = "{{ cookiecutter.author_name }}"
 
 # The version info for the project you"re documenting, acts as replacement
 # for |version| and |release|, also used in various other places throughout
@@ -169,7 +169,7 @@ latex_documents = [
         main_doc,
         "{{ cookiecutter.python_slug }}.tex",
         "{{ cookiecutter.project_slug }} Documentation",
-        "{{ cookiecutter.name }}",
+        "{{ cookiecutter.author_name }}",
         "manual",
     ),
 ]

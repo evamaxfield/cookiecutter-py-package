@@ -1,12 +1,12 @@
 {
-    "name": "Jane Doe",
-    "email": "jane@website.com",
-    "github_username": "JaneCodes",
+    "author_name": "Jane Doe",
+    "author_email": "jane@website.com",
+    "hosting_github_username_or_org": "JaneCodes",
     "project_name": "Python Boilerplate",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-')}}",
     "python_slug": "{{ cookiecutter.project_slug.replace('-', '_') }}",
     "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
-    "pypi_username": "{{ cookiecutter.github_username }}",
+    "hosting_pypi_username": "{{ cookiecutter.hosting_github_username_or_org }}",
     "version": "0.0.0",
     "license": [
       "MIT License",

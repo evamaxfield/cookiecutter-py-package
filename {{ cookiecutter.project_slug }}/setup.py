@@ -68,8 +68,8 @@ extra_requirements = {
 }
 
 setup(
-    author="{{ cookiecutter.name }}",
-    author_email="{{ cookiecutter.email }}",
+    author="{{ cookiecutter.author_name }}",
+    author_email="{{ cookiecutter.author_email }}",
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -97,7 +97,7 @@ setup(
     test_suite="{{ cookiecutter.python_slug }}/tests",
     tests_require=test_requirements,
     extras_require=extra_requirements,
-    url="https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}",
+    url="https://github.com/{{ cookiecutter.hosting_github_username_or_org }}/{{ cookiecutter.project_slug }}",
     # Do not edit this string manually, always use bumpversion
     # Details in CONTRIBUTING.rst
     version="0.0.0",

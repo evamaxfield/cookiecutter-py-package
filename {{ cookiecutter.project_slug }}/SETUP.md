@@ -13,11 +13,11 @@
 2. Ensure that you have set GitHub pages to build the `gh-pages` branch by selecting the
    `gh-pages` branch in the dropdown in the "GitHub Pages" section of the
    repository settings.
-   ([Repo Settings](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/settings))
+   ([Repo Settings](https://github.com/{{ cookiecutter.hosting_github_username_or_org }}/{{ cookiecutter.project_slug }}/settings))
 3. Register your project with PyPI:
     - Make an account on [pypi.org](https://pypi.org)
     - Go to your GitHub repository's settings and under the
-      [Secrets tab](https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/settings/secrets/actions),
+      [Secrets tab](https://github.com/{{ cookiecutter.hosting_github_username_or_org }}/{{ cookiecutter.project_slug }}/settings/secrets/actions),
       add a secret called `PYPI_TOKEN` with your password for your PyPI account.
       Don't worry, no one will see this password because it will be encrypted.
     - Next time you push to the branch `main` after using `bump2version`, GitHub
