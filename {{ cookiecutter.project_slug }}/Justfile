@@ -14,20 +14,28 @@ clean:
 	find . -name '*.pyo' -exec rm -f {} +
 	find . -name '*~' -exec rm -f {} +
 	find . -name '__pycache__' -exec rm -fr {} +
-	rm -fr .tox/
 	rm -fr .coverage
 	rm -fr coverage.xml
 	rm -fr htmlcov/
 	rm -fr .pytest_cache
 	rm -fr .mypy_cache
 
+# install with all deps
+install:
+	pip install -e {% raw %}{{justfile_directory()}}{% endraw %}[lint,test,docs,dev]
+
 # lint, format, and check all files
 lint:
-	tox -e lint
+	pre-commit run --all-files
 
-# run tox / run tests and lint
+# run tests
+test:
+	pytest --cov-report xml --cov-report html --cov={{ cookiecutter.python_slug }} {{ cookiecutter.python_slug }}/tests/
+
+# run lint and then run tests
 build:
-	tox
+	just lint
+	just test
 
 # generate Sphinx HTML documentation
 generate-docs:
@@ -35,12 +43,20 @@ generate-docs:
 	rm -f docs/modules.rst
 	sphinx-apidoc -o docs/ {{ cookiecutter.python_slug }} **/tests/
 	python -msphinx "docs/" "docs/_build/"
-	touch docs/_build/.nojekyll
 
 # generate Sphinx HTML documentation and serve to browser
 serve-docs:
 	just generate-docs
 	python -mwebbrowser -t file://{% raw %}{{justfile_directory()}}{% endraw %}/docs/_build/index.html
+
+# tag a new version
+tag-for-release version:
+	git tag -a {% raw %}"{{version}}" -m "{{version}}"{% endraw %}
+	echo "Tagged: $(git tag --sort=-version:refname| head -n 1)"
+
+# release a new version
+release:
+	git push --follow-tags
 
 # update this repo using latest cookiecutter-py-package
 update-from-cookiecutter:

@@ -1,28 +1,34 @@
-name: Test Repo Construction
+name: CI
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
-
-# Cancel actions when new commits are pushed to PR
-concurrency: 
-    group: ${{ github.head_ref }}
-    cancel-in-progress: true
+  schedule:
+    # <minute [0,59]> <hour [0,23]> <day of the month [1,31]>
+    # <month of the year [1,12]> <day of the week [0,6]>
+    # https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07
+    - cron: "27 14 * * 1"
+  workflow_dispatch:
 
 jobs:
   test-repo:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2.3.1
+    - uses: actions/checkout@v3
       with:
         persist-credentials: false
     - name: Set up Python
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v4
       with:
-        python-version: '3.10'
+        python-version: "3.10"
     - uses: extractions/setup-just@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Install Dependencies
       run: |
         pip install --upgrade pip
@@ -33,7 +39,8 @@ jobs:
     - name: Install Generated Repo Dependencies
       run: |
         cd python-boilerplate
-        pip install -e .[ci]
+        git init
+        just install
     - name: Run Generated Repo Build
       run: |
         cd python-boilerplate
@@ -41,5 +48,4 @@ jobs:
     - name: Test Generate Docs
       run: |
         cd python-boilerplate
-        pip install -e .[docs]
         just generate-docs
