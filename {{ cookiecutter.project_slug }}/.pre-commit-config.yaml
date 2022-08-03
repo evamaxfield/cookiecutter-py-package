@@ -1,3 +1,4 @@
+files: {{ cookiecutter.python_slug }}
 repos:
 
   - repo: https://github.com/PyCQA/isort

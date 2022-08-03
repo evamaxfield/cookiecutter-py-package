@@ -43,14 +43,13 @@ lint = [
   "flake8-debugger>=3.2.1",
   "isort>=5.7.0",
   "mypy>=0.790",
-  "tox>=3.25.1",
+  "pre-commit>=2.20.0",
 ]
 test = [
   "coverage>=5.1",
   "pytest>=5.4.3",
   "pytest-cov>=2.9.0",
   "pytest-raises>=0.11",
-  "tox>=3.25.1",
 ]
 docs = [
   "m2r2>=0.2.7",

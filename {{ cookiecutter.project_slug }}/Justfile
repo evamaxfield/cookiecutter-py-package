@@ -14,7 +14,6 @@ clean:
 	find . -name '*.pyo' -exec rm -f {} +
 	find . -name '*~' -exec rm -f {} +
 	find . -name '__pycache__' -exec rm -fr {} +
-	rm -fr .tox/
 	rm -fr .coverage
 	rm -fr coverage.xml
 	rm -fr htmlcov/
@@ -27,11 +26,16 @@ install:
 
 # lint, format, and check all files
 lint:
-	tox -e lint
+	pre-commit run --all-files
 
-# run tox / run tests and lint
+# run tests
+test:
+	pytest --cov-report xml --cov-report html --cov={{ cookiecutter.python_slug }} {{ cookiecutter.python_slug }}/tests/
+
+# run lint and then run tests
 build:
-	tox
+	just lint
+	just test
 
 # generate Sphinx HTML documentation
 generate-docs:
@@ -52,7 +56,7 @@ tag-for-release version:
 
 # release a new version
 release:
-	git push upstream --follow-tags
+	git push --follow-tags
 
 # update this repo using latest cookiecutter-py-package
 update-from-cookiecutter:
