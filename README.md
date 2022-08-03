@@ -1,6 +1,6 @@
 # Cookiecutter Py Package
 
-[![Example Repo Status](https://github.com/evamaxfield/cookiecutter-py-package/workflows/Generate%20and%20Test%20Example%20Repo/badge.svg)](https://github.com/evamaxfield/cookiecutter-py-package/tree/example-build)
+[![Build Status](https://github.com/evamaxfield/cookiecutter-py-package/workflows/CI/badge.svg)](https://github.com/evamaxfield/cookiecutter-py-package/actions)
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 
@@ -62,8 +62,3 @@ Available recipes:
     test                     # run tests
     update-from-cookiecutter # update this repo using latest cookiecutter-py-package
 ```
-
-## Example
-
--   For an example of the base project that is built from this template, go to the
-    [example-build branch](https://github.com/evamaxfield/cookiecutter-py-package/tree/example-build).
