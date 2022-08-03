@@ -41,6 +41,8 @@ lint = [
   "black>=22.3.0",
   "flake8>=3.8.3",
   "flake8-debugger>=3.2.1",
+  "flake8-pyprojecttoml",
+  "flake8-typing-imports>=1.9.0",
   "isort>=5.7.0",
   "mypy>=0.790",
   "pre-commit>=2.20.0",
@@ -119,4 +121,6 @@ show_error_codes = true
 max-line-length = 88
 ignore = "E203,E402,W291,W503"
 min-python-version = "3.8.0"
-per-file-ignores = []
+per-file-ignores = [
+  "__init__.py:F401",
+]

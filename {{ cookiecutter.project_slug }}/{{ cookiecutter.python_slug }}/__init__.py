@@ -11,7 +11,3 @@ except PackageNotFoundError:
 
 __author__ = "{{ cookiecutter.author_name }}"
 __email__ = "{{ cookiecutter.author_email }}"
-
-
-def get_module_version() -> str:
-    return __version__
