@@ -15,8 +15,12 @@ on:
   workflow_dispatch:
 
 jobs:
-  test-repo:
-    runs-on: ubuntu-latest
+  test-repo-gen:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macOS-latest, windows-latest]
 
     steps:
     - uses: actions/checkout@v3
@@ -36,16 +40,24 @@ jobs:
     - name: Generate Repo
       run: |
         cookiecutter . --no-input
-    - name: Install Generated Repo Dependencies
+    - name: Test Generated Repo Install
       run: |
         cd python-boilerplate
         git init
         just install
-    - name: Run Generated Repo Build
+    - name: Test Generated Repo Build
       run: |
         cd python-boilerplate
         just build
-    - name: Test Generate Docs
+    - name: Test Generated Repo Docs
       run: |
         cd python-boilerplate
         just generate-docs
+    - name: Test Generated Repo Clean
+      run: |
+        cd python-boilerplate
+        just clean
+    - name: Test Generated Repo Updates
+      run: |
+        cd python-boilerplate
+        just update-from-cookiecutter
