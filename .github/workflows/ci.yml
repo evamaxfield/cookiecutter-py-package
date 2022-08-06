@@ -44,6 +44,8 @@ jobs:
       run: |
         cd python-boilerplate
         git init
+        git config --global user.email "doesnt.matter@email.com"
+        git config --global user.name "Sally Tests"
         git add -A
         git commit -m "Initial commit"
         just install
