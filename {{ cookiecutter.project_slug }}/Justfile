@@ -46,7 +46,7 @@ generate-docs:
 
 
 # Generate project URI for browser opening
-{% raw %}project_uri = if {{os_family()}} == "unix" {
+{% raw %}project_uri := if {{os_family()}} == "unix" {
 	{{justfile_directory()}}
 } else {
 	replace({{justfile_directory}}, "\\", "/")
