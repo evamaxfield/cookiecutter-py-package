@@ -44,6 +44,8 @@ jobs:
       run: |
         cd python-boilerplate
         git init
+        git add -A
+        git commit -m "Initial commit"
         just install
     - name: Test Generated Repo Build
       run: |
@@ -52,7 +54,7 @@ jobs:
     - name: Test Generated Repo Docs
       run: |
         cd python-boilerplate
-        just generate-docs
+        just serve-docs
     - name: Test Generated Repo Clean
       run: |
         cd python-boilerplate
@@ -61,3 +63,4 @@ jobs:
       run: |
         cd python-boilerplate
         just update-from-cookiecutter
+        git status
