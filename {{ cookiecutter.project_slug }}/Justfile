@@ -50,7 +50,7 @@ serve-docs:
 	# We replace here to handle windows paths
 	# Windows paths are normally `\` separated but even in the browser they use `/`
 	# https://stackoverflow.com/a/61991869
-	python -mwebbrowser -t {{replace("file://{% raw %}{{justfile_directory()}}{% endraw %}/docs/_build/index.html", "\\", "/")}}
+	python -mwebbrowser -t {% raw %}{{replace("file://{{justfile_directory()}}/docs/_build/index.html", "\\", "/")}}{% endraw %}
 
 # tag a new version
 tag-for-release version:
