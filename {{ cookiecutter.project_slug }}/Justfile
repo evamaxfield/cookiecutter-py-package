@@ -47,7 +47,10 @@ generate-docs:
 # generate Sphinx HTML documentation and serve to browser
 serve-docs:
 	just generate-docs
-	python -mwebbrowser -t file://{% raw %}{{justfile_directory()}}{% endraw %}/docs/_build/index.html
+	# We replace here to handle windows paths
+	# Windows paths are normally `\` separated but even in the browser they use `/`
+	# https://stackoverflow.com/a/61991869
+	python -mwebbrowser -t {{replace("file://{% raw %}{{justfile_directory()}}{% endraw %}/docs/_build/index.html", "\\", "/")}}
 
 # tag a new version
 tag-for-release version:
