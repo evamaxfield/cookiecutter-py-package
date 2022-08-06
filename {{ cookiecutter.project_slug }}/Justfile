@@ -60,4 +60,5 @@ release:
 
 # update this repo using latest cookiecutter-py-package
 update-from-cookiecutter:
+	pip install cookiecutter
 	cookiecutter gh:evamaxfield/cookiecutter-py-package --config-file {% raw %}{{justfile_directory()}}{% endraw %}/.cookiecutter.yaml --no-input --overwrite-if-exists --output-dir {% raw %}{{justfile_directory()}}{% endraw %}/..
