@@ -22,8 +22,8 @@ on:
 jobs:
   # Check that all files listed in manifest make it into build
   check-manifest:
-    name: Check Manifest
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4

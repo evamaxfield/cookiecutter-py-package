@@ -39,6 +39,7 @@ Documentation = "https://{{ cookiecutter.hosting_github_username_or_org }}.githu
 [project.optional-dependencies]
 lint = [
   "black>=22.3.0",
+  "check-manifest>=0.48",
   "flake8>=3.8.3",
   "flake8-debugger>=3.2.1",
   "flake8-pyprojecttoml",
@@ -82,8 +83,11 @@ zip-safe = false
 include-package-data = true
 packages = { find = { exclude = ["tests"] } }
 
+[tool.setuptools.packages.find]
+exclude = ["*docs/*"]
+
 [tool.setuptools.package-data]
-"*" = ["*.yaml"]
+"*" = ["*.yaml", "py.typed"]
 
 # tools
 [tool.black]
@@ -106,6 +110,8 @@ ignore = [
   "CODE_OF_CONDUCT.md",
   "CONTRIBUTING.md",
   "Justfile",
+  ".cookiecutter.yaml",
+  "*docs/*",
 ]
 
 [tool.mypy]

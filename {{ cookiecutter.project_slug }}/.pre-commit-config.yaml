@@ -29,4 +29,3 @@ repos:
     rev: v0.971
     hooks:
       - id: mypy
-        exclude: scripts
