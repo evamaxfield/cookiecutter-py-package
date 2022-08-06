@@ -81,10 +81,9 @@ calc-string-length = "{{ cookiecutter.python_slug }}.bin.str_len:main"
 [tool.setuptools]
 zip-safe = false
 include-package-data = true
-packages = { find = { exclude = ["tests"] } }
 
 [tool.setuptools.packages.find]
-exclude = ["*docs/*"]
+exclude = ["*docs/*", "*tests/*"]
 
 [tool.setuptools.package-data]
 "*" = ["*.yaml", "py.typed"]
