@@ -46,10 +46,10 @@ generate-docs:
 
 
 # Generate project URI for browser opening
-{% raw %}project_uri := if "{{os_family()}}" == "unix" {
-	"{{justfile_directory()}}"
+{% raw %}project_uri := if "os_family()" == "unix" {
+	justfile_directory()
 } else {
-	"{{replace('{{justfile_directory()}}', '\\', '/')}}"
+	replace(justfile_directory(), "\\", "/")
 }{% endraw %}
 
 # generate Sphinx HTML documentation and serve to browser
