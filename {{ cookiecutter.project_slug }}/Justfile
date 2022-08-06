@@ -46,6 +46,9 @@ generate-docs:
 
 
 # Generate project URI for browser opening
+# We replace here to handle windows paths
+# Windows paths are normally `\` separated but even in the browser they use `/`
+# https://stackoverflow.com/a/61991869
 {% raw %}project_uri := if "os_family()" == "unix" {
 	justfile_directory()
 } else {
@@ -55,9 +58,6 @@ generate-docs:
 # generate Sphinx HTML documentation and serve to browser
 serve-docs:
 	just generate-docs
-	# We replace here to handle windows paths
-	# Windows paths are normally `\` separated but even in the browser they use `/`
-	# https://stackoverflow.com/a/61991869
 	python -mwebbrowser -t {% raw %}"file://{{project_uri}}/docs/_build/index.html"{% endraw %}
 
 # tag a new version
