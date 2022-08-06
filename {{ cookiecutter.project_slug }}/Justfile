@@ -58,7 +58,7 @@ serve-docs:
 	# We replace here to handle windows paths
 	# Windows paths are normally `\` separated but even in the browser they use `/`
 	# https://stackoverflow.com/a/61991869
-	python -mwebbrowser -t {% raw %}file://{{project_uri}}/docs/_build/index.html"{% endraw %}
+	python -mwebbrowser -t {% raw %}"file://{{project_uri}}/docs/_build/index.html"{% endraw %}
 
 # tag a new version
 tag-for-release version:
