@@ -22,7 +22,6 @@ import os
 import sys
 
 import {{ cookiecutter.python_slug }}
-import sphinx_autosummary_accessors
 
 sys.path.insert(0, os.path.abspath(".."))
 
@@ -37,21 +36,16 @@ sys.path.insert(0, os.path.abspath(".."))
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named "sphinx.ext.*") or your custom ones.
 extensions = [
+    # Sphinx lib ext
     "sphinx.ext.autodoc",
-    "sphinx.ext.doctest",
-    "sphinx.ext.mathjax",
-    "sphinx.ext.intersphinx",
     "sphinx.ext.autosummary",
-    "sphinx_autosummary_accessors",
-    "sphinx.ext.extlinks",
+    "sphinx.ext.intersphinx",
     "sphinx.ext.viewcode",
-    "numpydoc",
-    "sphinx_click.ext",
-    "sphinx_tabs.tabs",
-    "sphinx_remove_toctrees",
+    # Installed Sphinx ext
     "sphinx_copybutton",
-    "sphinx_design",
+    # Doc installs
     "m2r2",
+    "numpydoc", 
 ]
 
 copybutton_prompt_text = r">>> |\.\.\. |\$ |In \[\d*\]: | {2,5}\.\.\.: | {5,8}: "
@@ -60,13 +54,6 @@ copybutton_prompt_is_regexp = True
 numpydoc_show_class_members = False
 
 sphinx_tabs_disable_tab_closing = True
-
-# Remove individual API pages from sphinx toctree to prevent long build times.
-# See https://github.com/dask/dask/issues/8227.
-remove_from_toctrees = ["generated/*"]
-
-# Add any paths that contain templates here, relative to this directory.
-templates_path = ["_templates", sphinx_autosummary_accessors.templates_path]
 
 # Control autodoc
 autoclass_content = "both"  # include init doc with class
