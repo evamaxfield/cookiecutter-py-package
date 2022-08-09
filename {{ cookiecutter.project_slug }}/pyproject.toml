@@ -20,10 +20,10 @@ authors = [
 ]
 classifiers = [
   "Development Status :: 4 - Beta",
-        "Natural Language :: English",
-        "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3.9",
-        "Programming Language :: Python :: 3.10",
+  "Natural Language :: English",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
 ]
 dynamic = ["version"]
 dependencies = []
