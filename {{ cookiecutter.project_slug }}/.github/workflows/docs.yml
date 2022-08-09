@@ -27,10 +27,7 @@ jobs:
           just generate-docs
           touch docs/_build/.nojekyll
       - name: Publish Docs
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BASE_BRANCH: main # The branch the action should deploy from.
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: docs/_build/ # The folder the action should deploy.
+          folder: docs/_build/
 {% endraw %}
