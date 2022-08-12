@@ -20,7 +20,8 @@
       [Secrets tab](https://github.com/{{ cookiecutter.hosting_github_username_or_org }}/{{ cookiecutter.project_slug }}/settings/secrets/actions),
       add a secret called `PYPI_TOKEN` with your password for your PyPI account.
       Don't worry, no one will see this password because it will be encrypted.
-    - Next time you push to the branch `main` after using `bump2version`, GitHub
+    - Next time you push to the branch `main` after using
+      `just tag-for-release {version}` and `just release`, GitHub
       actions will build and deploy your Python package to PyPI.
 
 You can delete this file once complete!

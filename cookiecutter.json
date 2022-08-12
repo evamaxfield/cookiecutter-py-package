@@ -7,7 +7,6 @@
     "python_slug": "{{ cookiecutter.project_slug.replace('-', '_') }}",
     "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
     "hosting_pypi_username": "{{ cookiecutter.hosting_github_username_or_org }}",
-    "version": "0.0.0",
     "license": [
       "MIT License",
       "BSD License",

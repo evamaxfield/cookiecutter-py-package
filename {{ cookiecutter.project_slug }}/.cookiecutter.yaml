@@ -7,5 +7,4 @@ default_context:
     python_slug: "{{ cookiecutter.python_slug }}"
     project_short_description: "{{ cookiecutter.project_short_description }}"
     hosting_pypi_username: "{{ cookiecutter.hosting_pypi_username }}"
-    version: "{{ cookiecutter.version }}"
     license: "{{ cookiecutter.license }}"
