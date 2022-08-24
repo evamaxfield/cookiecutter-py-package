@@ -181,6 +181,6 @@ texinfo_documents = [
         "{{ cookiecutter.project_slug }} Documentation",
         author,
         "{{ cookiecutter.python_slug }}",
-        "TODO: short description",
+        "{{ cookiecutter.project_short_description }}",
     ),
 ]
