@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 import argparse
 import logging
@@ -7,6 +6,10 @@ import sys
 import traceback
 
 from {{ cookiecutter.python_slug }} import example
+
+###############################################################################
+
+log = logging.getLogger(__name__)
 
 ###############################################################################
 
@@ -49,7 +52,6 @@ def main() -> None:
         level=log_level,
         format="[%(levelname)4s: %(module)s:%(lineno)4s %(asctime)s] %(message)s",
     )
-    log = logging.getLogger(__name__)
 
     # Process
     try:

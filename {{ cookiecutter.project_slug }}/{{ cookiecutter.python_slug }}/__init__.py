@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """Top-level package for {{ cookiecutter.python_slug }}."""
 
 from importlib.metadata import PackageNotFoundError, version
