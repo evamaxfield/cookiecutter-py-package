@@ -1,5 +1,8 @@
 {% raw %}name: Documentation
 
+permissions:
+  contents: write
+
 on:
   push:
     branches:
