@@ -27,7 +27,7 @@ We think that this template provides a good starting point for any Python projec
 To use this template use the following commands.
 
 1. `pip install cookiecutter`
-2. `cookiecutter gh:evamaxfield/cookiecutter-py-package`
+2. `cookiecutter gh:NewLimit/cookiecutter-py-package`
 
 Once the project is generated, move to the newly created project directory
 and follow the instructions in `SETUP.md`.
