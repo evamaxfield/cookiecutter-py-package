@@ -41,6 +41,8 @@ and follow the instructions in `SETUP.md`.
     * This is due to the dynamic version management with `setuptools-scm`.
     * After running the cookiecutter, you should push code to a remote host
       (GitHub, GitLab, etc.) or at the very least, run `git init` prior to install.
+3. It is generally recommended to use VSCode and install the extensions for
+    black and ruff.
 
 ## Features
 
