@@ -13,7 +13,7 @@ name = "{{ cookiecutter.project_slug }}"
 description = "{{ cookiecutter.project_short_description }}"
 keywords = []
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 license = { text = "{{ cookiecutter.license }}" }
 authors = [
   { email = "{{ cookiecutter.author_email }}", name = "{{ cookiecutter.author_name }}" },
@@ -21,7 +21,6 @@ authors = [
 classifiers = [
   "Development Status :: 4 - Beta",
   "Natural Language :: English",
-  "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
@@ -39,16 +38,11 @@ Documentation = "https://{{ cookiecutter.hosting_github_username_or_org }}.githu
 # https://peps.python.org/pep-0621/#dependencies-optional-dependencies
 [project.optional-dependencies]
 lint = [
-  "black>=22.3.0",
   "check-manifest>=0.48",
-  "ruff>=0.0.216",
-  "mypy>=0.790",
   "pre-commit>=2.20.0",
 ]
 test = [
-  "coverage>=5.1",
   "pytest>=5.4.3",
-  "pytest-cov>=2.9.0",
   "pytest-raises>=0.11",
 ]
 docs = [

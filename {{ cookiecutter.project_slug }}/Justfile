@@ -30,7 +30,7 @@ lint:
 
 # run tests
 test:
-	pytest --cov-report xml --cov-report html --cov={{ cookiecutter.python_slug }} {{ cookiecutter.python_slug }}/tests
+	pytest {{ cookiecutter.python_slug }}/tests
 
 # run lint and then run tests
 build:
